@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css&quot; integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            border: none;
+            font-family: "Poppins", sans-serif;
+        }
+        body{
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            color: #fff ;
+            /* background-color: #000; */
+        }
+        header{
+            position: relative;
+            height: 90vh;
+            width: 100%;
+           background: #000;
+           color: #fff;
+           z-index: 1;
+           background-attachment: fixed;
+           /* padding: 0px 160px */
+            /* background: url(https://i.pinimg.com/736x/c3/50/7c/c3507c53c6808147630aa73cf3db477f.jpg) no-repeat center center/cover; */
+        }
+
+        .bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* keeps video behind content */
+            opacity: 0.7; /* optional, makes content easier to read */
+}
+       header .top-header{
+        position: fixed;
+        height: 60px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        /* background: #080125; */
+        align-items: center;
+        z-index: 2;
+           padding: 0px 160px;
+        background: rgba(0, 0, 0, 0.5);  
+
+
+       }
+        .logo{
+            position: relative;
+            /* top: 10px; */
+            left: 20px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+     
+        nav{
+            position: relative;
+            right: 20px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        nav a{
+            position: relative;
+            text-decoration: none;
+            color: #fff;
+            margin-right: 20px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+       
+        nav a:hover{
+            color: orangered;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hero{
+            position: absolute;
+            /* background: #222; */
+            width: 80%;
+            top: 50%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+           
+        }
+
+         .hero  .profile-pics{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            text-align: center;
+            object-fit: cover;
+            object-position: top ;
+           
+        }
+        .hero h1{
+            position: relative;
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            font-size: 32px;
+            color: orangered;
+        }
+         p{
+            position: relative;
+            width: 100%;
+            height: auto;
+            font-size: 18px;
+        }
+       
+        h1{
+            position: relative;
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            font-size: 32px;
+            color: #fff;
+        }
+        h2{
+            position: relative;
+            width: 100%;
+            height: auto;
+            /* margin-bottom: 10px; */
+            font-size: 18px;
+            color: orangered;
+        }
+        section{
+            position: relative;
+            width: 100%;
+            height: auto;
+            background: #080125;
+            padding: 50px 200px;
+        }
+
+        .about-me{
+            position: relative;
+            width: 100%;
+            height: auto;
+            padding: 100px 0;
+
+        }
+
+        .flex{
+            position: relative;
+            width: 100%;
+            height: auto;
+            display: flex;
+            gap: 20px;
+            /* justify-content: space-between; */
+        }
+
+         span {
+            position: relative;
+            width: 100%;
+            height: auto;
+            font-size: 18px;
+            color: orangered;
+        }
+
+        .about-me .flex .col:first-child{
+            position: relative;
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .about-me .flex .col:first-child img{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+          .about-me .flex .col:last-child {
+            position: relative;
+            width: 50%;
+            height: auto;
+            object-fit: cover;
+            object-position: top;
+        }
+
+         
+       
+         .about-me .flex .col:last-child p{
+            position: relative;
+            width: 100%;
+            height: auto;
+            color: #fff;
+            font-size: 15px;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+
+        .about-me .flex .col:last-child .about-data{
+            position: relative;
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px;
+            border: 2px solid orangered;
+            border-radius: 10px;
+            margin-bottom: 20px;
+
+       
+        }
+
+          .about-me .flex .col:last-child .about-data .about-data-text{
+            position: relative;
+            width: 200px;
+            height: auto;
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .head{
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: capitalize      ;
+        }
+        .sub-head{
+            font-size: 14px;
+        }
+
+
+        button{
+            position: relative;
+            width: fit-content;
+            padding: 10px 35px;
+            border-radius: 8px;
+            color: #fff;
+            background: orangered;
+            transition: 0.3s;
+            cursor:pointer;
+        }
+
+        button:hover{
+            opacity: 0.5;
+            background: #fff;
+        }
+
+        /* /////////// */
+
+        .services{
+            position: relative;
+            width: 100%;
+            height: auto;
+            margin-bottom: 100px;
+        }
+
+        .services h1{
+            margin-bottom:20px;
+        }
+        .services .flex{
+            display: flex;
+            /* justify-content: center; */
+            gap: 20px;
+            margin: auto;
+        }
+
+        .services .flex .col{
+            position: relative;
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid orangered;
+            padding: 20px;
+        }
+
+
+         .services .flex .col i{
+            position: relative;
+            font-size: 40px;
+            margin-bottom: 10px;
+            /* font-weight: 500; */
+        }
+
+
+        .services .flex .col h2{
+            position: relative;
+             width: 100%;
+            height: auto;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: orangered;
+        }
+        .services .flex .col p{
+            width: 100%;
+            height: auto;
+            position: relative;
+            font-size: 14px;
+            color: #fff;
+            text-align: left;
+        }
+        /* //////////////////// */
+
+        .Contact{
+            position: relative;
+            width: 100%;
+            height: auto;
+            text-align: center;
+            padding: 50px 0;
+            background: #fff;
+        }
+
+        .Contact span{
+            color: orangered;
+        }
+        .Contact h1{
+            color: #080125;
+            margin-bottom: 10px;
+        }
+        .Contact p{
+            color: #080125;
+            font-size: 15px;
+        }
+
+        footer{
+            position: relative;
+            width: 100%;
+            height: 60px;
+            background: #080125;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 200px;
+        }
+
+        footer span{
+            font-size: 14px;
+        }
+
+        footer .social-icons{
+            position: relative;
+            width: auto;
+            height: auto;
+            display: flex;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+   
+        <header>
+              <video autoplay muted loop playsinline class="bg-video">
+                <source src="istockphoto-1489067560-mp4-480x480-is.mp4" type="video/mp4" >
+                Your browser does not support the video tag.
+            </video>
+
+       <div class="top-header">
+            <div class="logo">Portfolio.</div>
+
+            <nav>
+                <a href="portfolioelsei.html">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </nav>
+       </div>
+       <!-- ////////////////////////////////////////// -->
+       <!-- ////////////////////////////////////////// -->
+    <div class="hero">
+       
+        <!-- <img src="https://www.pinterest.com/pin/7036943162447996/&quot; alt=""> -->
+        <img class="profile-pics" src="https://i.pinimg.com/736x/c3/50/7c/c3507c53c6808147630aa73cf3db477f.jpg&quot; alt="profile pic">
+        <h1>Welcome to My Portfolio</h1>
+        <p>This is a brief introduction about myself and my work.</p>
+    </div>
+        </header>
+    <!-- ///////////////////////////////////////////// -->
+    <!-- ///////////////////////////////////////////// -->
+<main>
+    <section>
+        <div class="about-me">
+            <div class="flex">
+
+            <div class="col">
+                <img src="https://i.pinimg.com/736x/c3/50/7c/c3507c53c6808147630aa73cf3db477f.jpg&quot; alt="profile pic">
+            </div>
+
+            <div class="col write-up">
+                <span>Discover</span>
+                <h1>About me</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt quibusdam perferendis quas optio molestias delectus natus similique explicabo possimus ipsam nulla quaerat, magni, ullam consequatur minima accusamus consequuntur repellendus expedita?</p>
+
+
+                <div class="about-data">
+                    <div class="about-data-text">
+                        <div class="head">Name:</div>
+                        <div class="subhead">Elsie</div>
+                    </div>
+
+                     <div class="about-data-text">
+                        <div class="head">Surname:</div>
+                        <div class="subhead">Jesus</div>
+                    </div>
+
+                     <div class="about-data-text">
+                        <div class="head">Age:</div>
+                        <div class="subhead">20</div>
+                    </div>
+
+                     <div class="about-data-text">
+                        <div class="head">Height:</div>
+                        <div class="subhead">5inch tall</div>
+                    </div>
+
+
+                     <div class="about-data-text">
+                        <div class="head">Weight </div>
+                        <div class="subhead">50kg</div>
+                    </div>
+
+
+                     <div class="about-data-text">
+                        <div class="head">State:</div>
+                        <div class="subhead">Enugu</div>
+                    </div>
+
+
+                     <div class="about-data-text">
+                        <div class="head">Hobbies:</div>
+                        <div class="subhead">travelling, coding, sleeping</div>
+                    </div>
+
+                     <div class="about-data-text">
+                        <div class="head">food:</div>
+                        <div class="subhead">Egusi</div>
+                    </div>
+
+                </div>
+
+
+                <button>Discover more</button>
+            </div>
+        </div>
+        </div>
+
+
+
+        <!-- ////////////////////////////////////// -->
+
+        <div class="services">
+            <span>what i do</span>
+            <h1>Services</h1>
+
+            <div class="flex">
+                <div class="col">
+                    <i class="fa fa-sign-language" aria-hidden="true"></i>
+                    <h2>Web Development</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                </div>
+
+                <div class="col">
+                    <i class="fa fa-desktop" aria-hidden="true"></i>
+                    <h2>UI/UX designer</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                </div>
+
+                 <div class="col">
+                    <i class="fa fa-sign-language" aria-hidden="true"></i>
+                    <h2>AI trainer</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                </div>
+            </div>
+        </div>
+       
+
+    </section>
+   
+        <div class="Contact">
+            <span>Get in touch</span>
+            <h1>Contact Me</h1>
+            <p>If you have any questions or would like to work together, feel free to reach out!</p>
+            <input type="text" placeholder="Your Name" style="padding: 10px; width: 300px; margin: 10px; border: 1px solid  #080125 ; border-radius: 5px;">
+            <button> Contact me</button>
+        </div>
+  </main>
+  <!-- /////////////////////////// -->
+    <footer>
+        <span>&copy; copyright. Allright Resevered 2025</span>
+        <div class="social-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-x-twitter"></i>
+        </div>
+    </footer>
+   
+</body>
+</html>
